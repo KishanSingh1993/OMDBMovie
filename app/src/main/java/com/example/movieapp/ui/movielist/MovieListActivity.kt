@@ -18,6 +18,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
@@ -65,7 +66,7 @@ class MovieListActivity : AppCompatActivity(), KodeinAware
     {
         customAdapterMovies = CustomAdapterMovies()
         dataBind.recyclerViewMovies.apply{
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = GridLayoutManager(context,2)
             itemAnimator = DefaultItemAnimator()
             adapter = customAdapterMovies
             addOnItemTouchListener(
